@@ -24,3 +24,15 @@ Describe "Get-LastName" {
 		Get-LastName | Should Not Be "McDudeypants"
 	}
 }
+
+Describe "Add-Days" {
+	It "Adds 1 Day" {
+		Add-Days "2017-07-04 00:00:00" 1 | Should Be ([datetime]("2017-07-05 00:00:00"))
+	}
+	It "Removes 1 Day" {
+		Add-Days "2017-07-04 00:00:00" -1 | Should Be ([datetime]("2017-07-03 00:00:00"))
+	}
+	It "Adds 2  Days - Pipeline" {
+		([datetime]("2017-07-04 00:00:00")) | Add-Days 2 | Should Be ([datetime]("2017-07-06 00:00:00"))
+	}
+}
