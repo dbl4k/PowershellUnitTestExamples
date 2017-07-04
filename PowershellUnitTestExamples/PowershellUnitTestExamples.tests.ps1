@@ -4,6 +4,9 @@
 # You can download Pester from http://go.microsoft.com/fwlink/?LinkID=534084
 #
 
+$here = Split-Path -Parent $MyInvocation.MyCommand.Path
+Import-Module "$here\PowershellUnitTestExamples.psm1"
+
 Describe "Get-FirstName" {
 
 	It "Returns 'Dude'" {
