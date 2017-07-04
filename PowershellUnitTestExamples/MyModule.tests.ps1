@@ -5,7 +5,7 @@
 #
 
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-Import-Module "$here\PowershellUnitTestExamples.psm1"
+Import-Module "$here\MyModule.psm1"
 
 Describe "Get-FirstName" {
 
