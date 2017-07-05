@@ -32,7 +32,7 @@ function Get-CurrentDate() {
 function Get-TimeStamp() {
     return "[$((Get-Date -Date (Get-CurrentDate) -Format s).ToString().Replace("T"," "))]"
 }
-Get-Date -Format 
+
 # Exports
 Export-ModuleMember Get-CurrentDate
 Export-ModuleMember Get-TimeStamp
