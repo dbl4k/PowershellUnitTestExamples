@@ -70,17 +70,17 @@ Describe "Add-Numbers" {
     }
 }
 
-Describe "Sub-Numbers" {
+Describe "Remove-Numbers" {
     It "2 - 2 = 0" {
-         Sub-Numbers 2 2 | Should Be 0
+         Remove-Numbers 2 2 | Should Be 0
     }
 
     It "3 - 2 = 1" {
-         Sub-Numbers 3 2 | Should Be 1
+         Remove-Numbers 3 2 | Should Be 1
     }
 
     It "3 - 7 = -4" {
-         Sub-Numbers 3 7 | Should Be -4
+         Remove-Numbers 3 7 | Should Be -4
     }
 }
 

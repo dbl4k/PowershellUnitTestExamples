@@ -21,7 +21,7 @@ function Add-Numbers($first, $second) {
     return ($first + $second)
 }
 
-function Sub-Numbers($first, $second) {
+function Remove-Numbers($first, $second) {
     return ($first - $second)
 }
 
@@ -36,7 +36,7 @@ function Get-TimeStamp() {
 # Exports
 Export-ModuleMember Get-CurrentDate
 Export-ModuleMember Get-TimeStamp
-Export-ModuleMember Sub-Numbers
+Export-ModuleMember Remove-Numbers
 Export-ModuleMember Add-Numbers
 Export-ModuleMember Add-Days
 Export-ModuleMember Get-LastName
