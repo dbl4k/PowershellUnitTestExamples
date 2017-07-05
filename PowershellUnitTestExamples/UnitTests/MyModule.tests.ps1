@@ -43,7 +43,6 @@ Describe "Add-Days" {
     It "Adds 5 Days - Using Pipeline DateTime" {
 		[datetime]("2017-07-04 00:00:00") | Add-Days -DaysToAdd 5 | Should Be ([datetime]("2017-07-09 00:00:00"))
 	}
-
     It "Adds 5 Days, Validate Incorrect - Using Pipeline DateTime" {
 		[datetime]("2017-07-04 00:00:00") | Add-Days -DaysToAdd 5 | Should Not Be ([datetime]("2017-07-08 00:00:00"))
 	}
