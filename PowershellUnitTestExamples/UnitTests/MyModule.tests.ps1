@@ -83,3 +83,18 @@ Describe "Sub-Numbers" {
          Sub-Numbers 3 7 | Should Be -4
     }
 }
+
+Describe "Get-TimeStamp" {
+	InModuleScope MyModule {
+		$testDate = New-Object DateTime(2017,07,01)
+	
+		Mock -ModuleName MyModule Get-CurrentDate {
+			return $testDate
+		}
+
+		It "Should return a date in format [yyyy-MM-dd HH:mm:ss]" { 
+			#Assert-MockCalled -ModuleName MyModule Get-CurrentDate -Times 1
+			Get-TimeStamp | Should Be "[2017-07-01 00:00:00]"
+		}
+	}
+}
