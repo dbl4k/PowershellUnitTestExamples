@@ -109,3 +109,21 @@ Describe "Get-TimeStamp" {
 		}
 	}
 }
+
+Describe "Format-String" {
+	It "Replaces {0} with first item in list." { 
+		Format-String -Input "{0}" -SubstituteList @("Hello","Goodbye") | Should Be "Hello"
+	}
+
+	It "Replaces {0}, {1} with first and second item in list" { 
+		Format-String -Input "{0}, {1}" -SubstituteList @("Hello","Goodbye") | Should Be "Hello, Goodbye"
+	}
+	
+	It "Replaces {0}, {1}, {1} with first, second and second item in list" { 
+		Format-String -Input "{0}, {1}, {1}" -SubstituteList @("Hello","Goodbye") | Should Be "Hello, Goodbye, Goodbye"
+	}
+
+	It "Replaces {0}, {1}, {0} with first, second and first item in list" { 
+		Format-String -Input "{0}, {1}, {0}" -SubstituteList @("Hello","Goodbye") | Should Be "Hello, Goodbye, Hello"
+	}
+}
