@@ -12,7 +12,6 @@ Remove-Module $module_name | Out-Null
 Import-Module $here"\Modules\"$module_name".psm1" -Verbose | Out-Null
 
 # Tests
-
 Describe "Get-FirstName" {
 	It "Returns 'Dude'" {
 		Get-FirstName | Should Be "Dude"
@@ -41,4 +40,32 @@ Describe "Add-Days" {
 	It "Adds 2  Days - Pipeline" {
 		([datetime]("2017-07-04 00:00:00")) | Add-Days 2 | Should Be ([datetime]("2017-07-06 00:00:00"))
 	}
+}
+
+Describe "Add-Numbers" {
+    It "2 + 2 = 4" {
+         Add-Numbers 2 2 | Should Be 4
+    }
+
+    It "3 + 2 = 5" {
+         Add-Numbers 3 2 | Should Be 5
+    }
+
+    It "3 + 7 = 10" {
+         Add-Numbers 3 7 | Should Be 10
+    }
+}
+
+Describe "Sub-Numbers" {
+    It "2 - 2 = 0" {
+         Sub-Numbers 2 2 | Should Be 0
+    }
+
+    It "3 - 2 = 1" {
+         Sub-Numbers 3 2 | Should Be 1
+    }
+
+    It "3 - 7 = -4" {
+         Sub-Numbers 3 7 | Should Be -4
+    }
 }
