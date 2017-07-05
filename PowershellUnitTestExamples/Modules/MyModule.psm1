@@ -33,6 +33,10 @@ function Get-TimeStamp() {
     return "[$((Get-Date -Date (Get-CurrentDate) -Format s).ToString().Replace("T"," "))]"
 }
 
+Function Format-String{$Input, $SubstituteList} {
+    return [String]::Format($Input, [string[]]$SubstituteList)
+}
+
 # Exports
 Export-ModuleMember Get-CurrentDate
 Export-ModuleMember Get-TimeStamp
@@ -41,6 +45,7 @@ Export-ModuleMember Add-Numbers
 Export-ModuleMember Add-Days
 Export-ModuleMember Get-LastName
 Export-ModuleMember Get-FirstName
+Export-ModuleMember Format-String
 
 
 
