@@ -3,4 +3,4 @@ Freshly ground Pester.
 
 Lovely.
 
-![sample](images\capture.png)
+![sample](images/capture.png)
