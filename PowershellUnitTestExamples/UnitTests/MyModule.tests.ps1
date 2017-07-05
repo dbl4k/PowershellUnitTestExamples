@@ -5,7 +5,11 @@
 #
 
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-Import-Module "$here\MyModule.psm1"
+$module_name = "MyModule"
+
+# Reload Module
+Remove-Module $module_name | Out-Null
+Import-Module $here"\Modules\"$module_name".psm1" -Verbose | Out-Null
 
 Describe "Get-FirstName" {
 	It "Returns 'Dude'" {
