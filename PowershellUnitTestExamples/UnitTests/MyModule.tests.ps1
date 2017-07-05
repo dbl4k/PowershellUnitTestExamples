@@ -11,6 +11,8 @@ $module_name = "MyModule"
 Remove-Module $module_name | Out-Null
 Import-Module $here"\Modules\"$module_name".psm1" -Verbose | Out-Null
 
+# Tests
+
 Describe "Get-FirstName" {
 	It "Returns 'Dude'" {
 		Get-FirstName | Should Be "Dude"
