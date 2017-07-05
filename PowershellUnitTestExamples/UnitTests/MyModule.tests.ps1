@@ -86,15 +86,26 @@ Describe "Sub-Numbers" {
 
 Describe "Get-TimeStamp" {
 	InModuleScope MyModule {
-		$testDate = New-Object DateTime(2017,07,01)
+		$testDate = New-Object DateTime(2017, 07, 01)
 	
 		Mock -ModuleName MyModule Get-CurrentDate {
 			return $testDate
 		}
 
-		It "Should return a date in format [yyyy-MM-dd HH:mm:ss]" { 
-			#Assert-MockCalled -ModuleName MyModule Get-CurrentDate -Times 1
+		It "Returns a date in format [yyyy-MM-dd HH:mm:ss]" { 
 			Get-TimeStamp | Should Be "[2017-07-01 00:00:00]"
+		}
+
+		It "Returns a String" { 
+			# TODO "BeOfType" operator is quite new, unrem if using newer version.
+			# Get-TimeStamp | Should Be OfType System.String
+			(Get-TimeStamp).GetType() | Should Be ([System.String])
+		}
+
+		It "Does not return a DateTime" { 
+			# TODO "BeOfType" operator is quite new, unrem if using newer version.
+			# Get-TimeStamp | Should Not Be OfType System.DateTime
+			(Get-TimeStamp).GetType() | Should Not Be ([System.DateTime])
 		}
 	}
 }
