@@ -3,4 +3,4 @@ Freshly ground Pester.
 
 Lovely.
 
-![sample](images/capture.png)
+![sample](https://github.com/dbl4k/PowershellUnitTestExamples/blob/master/Images/capture.png)
