@@ -6,7 +6,8 @@
 
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $module_name = "MyModule"
-$module_path = "$($here)\..\Modules\$($module_name).psm1"
+$module_dir = "$($here)\..\Modules"
+$module_path = "$($module_dir)\$($module_name).psm1"
 
 # Reload Module
 Remove-Module $module_name -ErrorAction SilentlyContinue | Out-Null
