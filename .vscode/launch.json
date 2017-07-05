@@ -5,7 +5,7 @@
             "type": "PowerShell",
             "request": "launch",
             "name": "MyModule.tests",
-            "script": "${workspaceRoot}\\PowershellUnitTestExamples\\MyModule.tests.ps1",
+            "script": "${workspaceRoot}\\PowershellUnitTestExamples\\UnitTests\\MyModule.tests.ps1",
             "args": [],
             "cwd": ""
         },        
