@@ -6,10 +6,11 @@
 
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $module_name = "MyModule"
+$module_path = "$($here)\..\Modules\$($module_name).psm1"
 
 # Reload Module
 Remove-Module $module_name -ErrorAction SilentlyContinue | Out-Null
-Import-Module "$($here)\..\Modules\$($module_name).psm1" -Verbose | Out-Null
+Import-Module $module_path -Verbose | Out-Null
 
 # Tests
 Describe "Get-FirstName" {
