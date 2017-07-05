@@ -8,8 +8,8 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $module_name = "MyModule"
 
 # Reload Module
-Remove-Module $module_name | Out-Null
-Import-Module $here"\Modules\"$module_name".psm1" -Verbose | Out-Null
+Remove-Module $module_name -ErrorAction SilentlyContinue | Out-Null
+Import-Module "$($here)\..\Modules\$($module_name).psm1" -Verbose | Out-Null
 
 # Tests
 Describe "Get-FirstName" {
@@ -36,9 +36,6 @@ Describe "Add-Days" {
 	}
 	It "Removes 1 Day" {
 		Add-Days "2017-07-04 00:00:00" -1 | Should Be ([datetime]("2017-07-03 00:00:00"))
-	}
-	It "Adds 2  Days - Pipeline" {
-		([datetime]("2017-07-04 00:00:00")) | Add-Days 2 | Should Be ([datetime]("2017-07-06 00:00:00"))
 	}
 }
 
