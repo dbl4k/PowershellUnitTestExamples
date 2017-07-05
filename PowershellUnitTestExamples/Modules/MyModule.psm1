@@ -11,8 +11,6 @@ function Get-LastName {
 }
 
 function Add-Days() {
-	# TODO: Would be useful to add pipeline input here.
-	##[cmdletbinding()]
 	[CmdletBinding()]
     Param(
         [Parameter(ValueFromPipeline, Mandatory)]$Value,
