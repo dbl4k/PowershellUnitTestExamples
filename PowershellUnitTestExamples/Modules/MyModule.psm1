@@ -22,7 +22,3 @@ function Add-Days() {
 		return $Value.AddDays($DaysToAdd)
 	}
 }
-
-Export-ModuleMember Get-FirstName
-Export-ModuleMember Get-LastName
-Export-ModuleMember Add-Days
