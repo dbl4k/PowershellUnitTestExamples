@@ -11,6 +11,7 @@ function Get-LastName {
 }
 
 function Add-Days() {
+	# TODO: Would be useful to add pipeline input here.
 	##[cmdletbinding()]
   	Param (
   		[parameter(ValueFromPipeline)] 
@@ -22,3 +23,14 @@ function Add-Days() {
 		return $Value.AddDays($DaysToAdd)
 	}
 }
+
+function Add-Numbers($first, $second) {
+    return ($first + $second)
+}
+
+function Sub-Numbers($first, $second) {
+    return ($first - $second)
+}
+
+
+
